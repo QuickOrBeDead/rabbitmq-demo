@@ -9,6 +9,8 @@ var factory = new ConnectionFactory { HostName = "localhost" };
 using (var connection = factory.CreateConnection())
 using (var channel = connection.CreateModel())
 {
+    // fanout exchange sample
+
     channel.ExchangeDeclare(exchange: "sample2", type: ExchangeType.Fanout);
 
     var message = $"Message at {DateTime.Now}";

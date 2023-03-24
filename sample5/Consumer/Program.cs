@@ -13,6 +13,8 @@ var factory = new ConnectionFactory { HostName = "localhost" };
 using (var connection = factory.CreateConnection())
 using (var channel = connection.CreateModel())
 {
+    // dead letter exchange sample
+
     channel.ExchangeDeclare(exchange: "sample5-dlx", type: ExchangeType.Direct);
     channel.QueueDeclare(
         queue: "sample5-dlx",

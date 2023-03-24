@@ -13,6 +13,8 @@ var factory = new ConnectionFactory { HostName = "localhost" };
 using (var connection = factory.CreateConnection())
 using (var channel = connection.CreateModel())
 {
+    // ack / nack sample
+
     channel.QueueDeclare(queue: "sample3",
         durable: false,
         exclusive: false,
